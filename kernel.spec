@@ -499,6 +499,12 @@ Patch001: 0001-gpiolib-acpi-make-sure-we-trigger-the-events-at-leas.patch
 Patch002: 0002-ACPICA-adapt-buffer-length-for-Field-Attrib-Raw-Proc.patch
 Patch003: 0003-power-surface3_power-MSHW0011-rev-eng-implementation.patch
 
+Patch020: v4-1-5-i2c-designware-Rename-accessor_flags-to-flags.patch
+Patch021: v4-2-5-i2c-designware-baytrail-Pass-dw_i2c_dev-into-helper-functions.patch
+Patch022: v4-3-5-i2c-designware-baytrail-Only-check-iosf_mbi_available-for-shared-hosts.patch
+Patch023: v4-4-5-i2c-designware-baytrail-Disallow-the-CPU-to-enter-C6-or-C7-while-holding-the-punit-semaphore.patch
+Patch024: v4-5-5-i2c-designware-baytrail-Add-support-for-cherrytrail.patch
+
 # Standalone patches
 
 # a tempory patch for QCOM hardware enablement. Will be gone by end of 2016/F-26 GA
