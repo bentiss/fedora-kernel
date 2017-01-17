@@ -496,6 +496,8 @@ Source5005: kbuild-AFTER_LINK.patch
 
 # Surface 3 patches
 Patch001: 0001-gpiolib-acpi-make-sure-we-trigger-the-events-at-leas.patch
+Patch002: 0002-ACPICA-adapt-buffer-length-for-Field-Attrib-Raw-Proc.patch
+Patch003: 0003-power-surface3_power-MSHW0011-rev-eng-implementation.patch
 
 # Standalone patches
 
