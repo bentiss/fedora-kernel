@@ -495,6 +495,7 @@ Source5005: kbuild-AFTER_LINK.patch
 # Git trees.
 
 # Surface 3 patches
+Patch001: 0001-gpiolib-acpi-make-sure-we-trigger-the-events-at-leas.patch
 
 # Standalone patches
 
