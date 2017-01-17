@@ -1,0 +1,40 @@
+From 909e3ee22caf1c67657c9a4438b82ed805837850 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Fri, 8 Jul 2016 16:34:18 +0200
+Subject: [PATCH 02/17] HID: logitech-hidpp: Add scope to battery
+
+Without a scope defined, UPower assumes that the battery is provide
+power to the computer it's connected to, like a laptop battery or a UPS.
+
+Tested-by: Peter Hutterer <peter.hutterer@who-t.net>
+Signed-off-by: Bastien Nocera <hadess@hadess.net>
+Signed-off-by: Benjamin Tissoires <benjamin.tissoires@redhat.com>
+---
+ drivers/hid/hid-logitech-hidpp.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/drivers/hid/hid-logitech-hidpp.c b/drivers/hid/hid-logitech-hidpp.c
+index 4eeb550..4aaf237 100644
+--- a/drivers/hid/hid-logitech-hidpp.c
++++ b/drivers/hid/hid-logitech-hidpp.c
+@@ -761,6 +761,7 @@ static int hidpp20_battery_event(struct hidpp_device *hidpp,
+ static enum power_supply_property hidpp_battery_props[] = {
+ 	POWER_SUPPLY_PROP_STATUS,
+ 	POWER_SUPPLY_PROP_CAPACITY,
++	POWER_SUPPLY_PROP_SCOPE,
+ };
+ 
+ static int hidpp_battery_get_property(struct power_supply *psy,
+@@ -777,6 +778,9 @@ static int hidpp_battery_get_property(struct power_supply *psy,
+ 		case POWER_SUPPLY_PROP_CAPACITY:
+ 			val->intval = hidpp->battery.level;
+ 			break;
++		case POWER_SUPPLY_PROP_SCOPE:
++			val->intval = POWER_SUPPLY_SCOPE_DEVICE;
++			break;
+ 		default:
+ 			ret = -EINVAL;
+ 			break;
+-- 
+2.9.3
+

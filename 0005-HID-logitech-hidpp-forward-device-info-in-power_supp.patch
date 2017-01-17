@@ -1,0 +1,48 @@
+From c5e0a0ba107e7ecd7596e0b817b780a87c8043d0 Mon Sep 17 00:00:00 2001
+From: Benjamin Tissoires <benjamin.tissoires@redhat.com>
+Date: Thu, 12 Jan 2017 12:44:03 +0100
+Subject: [PATCH 05/17] HID: logitech-hidpp: forward device info in
+ power_supply
+
+Better forwarding the device name, manufacturer and serial to upower.
+Note that serial is still empty, it will be filled in a later patch
+in this series.
+
+Signed-off-by: Benjamin Tissoires <benjamin.tissoires@redhat.com>
+---
+ drivers/hid/hid-logitech-hidpp.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/drivers/hid/hid-logitech-hidpp.c b/drivers/hid/hid-logitech-hidpp.c
+index 3c57886..77bfb65 100644
+--- a/drivers/hid/hid-logitech-hidpp.c
++++ b/drivers/hid/hid-logitech-hidpp.c
+@@ -758,6 +758,9 @@ static enum power_supply_property hidpp_battery_props[] = {
+ 	POWER_SUPPLY_PROP_STATUS,
+ 	POWER_SUPPLY_PROP_CAPACITY,
+ 	POWER_SUPPLY_PROP_SCOPE,
++	POWER_SUPPLY_PROP_MODEL_NAME,
++	POWER_SUPPLY_PROP_MANUFACTURER,
++	POWER_SUPPLY_PROP_SERIAL_NUMBER,
+ };
+ 
+ static int hidpp_battery_get_property(struct power_supply *psy,
+@@ -783,6 +786,15 @@ static int hidpp_battery_get_property(struct power_supply *psy,
+ 					hidpp->battery.status ==
+ 					      POWER_SUPPLY_STATUS_FULL;
+ 			break;
++		case POWER_SUPPLY_PROP_MODEL_NAME:
++			val->strval = hidpp->hid_dev->name;
++			break;
++		case POWER_SUPPLY_PROP_MANUFACTURER:
++			val->strval = "Logitech";
++			break;
++		case POWER_SUPPLY_PROP_SERIAL_NUMBER:
++			val->strval = hidpp->hid_dev->uniq;
++			break;
+ 		default:
+ 			ret = -EINVAL;
+ 			break;
+-- 
+2.9.3
+

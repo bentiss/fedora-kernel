@@ -505,6 +505,26 @@ Patch022: v4-3-5-i2c-designware-baytrail-Only-check-iosf_mbi_available-for-share
 Patch023: v4-4-5-i2c-designware-baytrail-Disallow-the-CPU-to-enter-C6-or-C7-while-holding-the-punit-semaphore.patch
 Patch024: v4-5-5-i2c-designware-baytrail-Add-support-for-cherrytrail.patch
 
+Patch099: 0001-HID-logitech-hidpp-add-battery-support-for-HID-2.0-d.patch
+Patch100: 0002-HID-logitech-hidpp-remove-HIDPP_QUIRK_CONNECT_EVENTS.patch
+Patch101: 0001-HID-logitech-dj-allow-devices-to-request-full-pairin.patch
+Patch102: 0002-HID-logitech-hidpp-Add-scope-to-battery.patch
+Patch103: 0003-HID-logitech-hidpp-make-sure-we-only-register-one-ba.patch
+Patch104: 0004-HID-logitech-hidpp-battery-remove-overloads-and-prov.patch
+Patch105: 0005-HID-logitech-hidpp-forward-device-info-in-power_supp.patch
+Patch106: 0006-HID-logitech-hidpp-create-the-battery-for-all-types-.patch
+Patch107: 0007-HID-logitech-hidpp-return-an-error-if-the-feature-is.patch
+Patch108: 0008-HID-logitech-hidpp-add-support-for-battery-status-fo.patch
+Patch109: 0009-HID-logitech-hidpp-enable-HID-1.0-battery-reporting.patch
+Patch110: 0010-HID-logitech-hidpp-notify-battery-on-connect.patch
+Patch111: 0011-HID-logitech-hidpp-add-a-sysfs-file-to-tell-we-suppo.patch
+Patch112: 0012-HID-logitech-hidpp-allow-non-HID-devices-to-be-handl.patch
+Patch113: 0013-HID-logitech-hidpp-make-.probe-usbhid-capable.patch
+Patch114: 0014-HID-logitech-hidpp-do-not-query-the-name-through-HID.patch
+Patch115: 0015-HID-logitech-hidpp-rework-probe-path-for-unifying-de.patch
+Patch116: 0016-HID-logitech-hidpp-report-battery-for-the-G700-over-.patch
+Patch117: 0017-HID-logitech-hidpp-retrieve-the-name-of-the-gaming-m.patch
+
 # Standalone patches
 
 # a tempory patch for QCOM hardware enablement. Will be gone by end of 2016/F-26 GA
@@ -2165,6 +2185,7 @@ fi
 %changelog
 * Tue Jan 17 2017 Benjamin Tissoires <benjamin.tissoires@redhat.com>
 - Surface 3 patches
+- HID++ power_supply patches
 
 * Mon Jan 16 2017 Justin M. Forbes <jforbes@fedoraproject.org> - 4.10.0-0.rc4.git0.1
 - Disable debugging options.
