@@ -24,7 +24,7 @@ Summary: The Linux kernel
 %global zipsed -e 's/\.ko$/\.ko.xz/'
 %endif
 
-# define buildid .local
+%define buildid .surface3
 
 # baserelease defines which build revision of this kernel version we're
 # building.  We used to call this fedora_build, but the magical name
@@ -493,6 +493,8 @@ Source5005: kbuild-AFTER_LINK.patch
 %if !%{nopatches}
 
 # Git trees.
+
+# Surface 3 patches
 
 # Standalone patches
 
@@ -2152,6 +2154,9 @@ fi
 #
 #
 %changelog
+* Tue Jan 17 2017 Benjamin Tissoires <benjamin.tissoires@redhat.com>
+- Surface 3 patches
+
 * Mon Jan 16 2017 Justin M. Forbes <jforbes@fedoraproject.org> - 4.10.0-0.rc4.git0.1
 - Disable debugging options.
 - Linux v4.10-rc4
